@@ -2,6 +2,8 @@
  *
  * @constructor
  */
+let html = document.querySelector('html')
+
 function Wic(){
    const btn = '.wic-contast-btn'
    const body = 'body'
@@ -14,11 +16,11 @@ function Wic(){
    })
 
    function switchHandler(event){
-      if (document.body.style.filter !=''){
-         document.body.style.filter = ''
+      if (html.style.filter !=''){
+         html.style.filter = ''
          deleteCookie('gray')
       }else{
-         document.body.style.filter = 'grayscale(100%)'
+         html.style.filter = 'grayscale(100%)'
          setCookie('gray',true)
       }
 
@@ -28,7 +30,7 @@ function Wic(){
 window.addEventListener("load", function(event) {
    Wic()
    if (getCookie('gray')){
-      document.body.style.filter = 'grayscale(100%)'
+      html.style.filter= 'grayscale(100%)'
    }
 });
 

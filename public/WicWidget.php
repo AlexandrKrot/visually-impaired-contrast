@@ -29,7 +29,7 @@ class WicWidget extends WP_Widget {
         echo $args['before_widget'];
 
         if ( ! empty( $title ) )
-            echo $args['before_title'] . sprintf('<span class="wic-contast-btn">%s</span>',$title) . $args['after_title'];
+            echo  sprintf('<span class="wic-contast-btn">%s</span>',$title);
 
         echo $args['after_widget'];
     }
