@@ -3,7 +3,8 @@ Visually impaired contrast wordpress plugin
 (Плагін wordpress для швидкого перемикання стилів - ) 
   
 >Base css  
-```body {
+```
+body {
 	filter:grayscale(100%);
 }
 ```  
