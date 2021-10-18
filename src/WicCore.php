@@ -6,12 +6,16 @@ class WicCore {
 
     private $settings;
 
+    public $customCss;
+
     /**
      *
      */
     public function __construct()
     {
-
+        if (get_option('wic_css')){
+            $this->customCss = get_option('wic_css');
+        }
     }
 
 

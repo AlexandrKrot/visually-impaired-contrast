@@ -16,21 +16,29 @@ function Wic(){
    })
 
    function switchHandler(event){
-      if (html.style.filter !=''){
-         html.style.filter = ''
-         deleteCookie('gray')
-      }else{
-         html.style.filter = 'grayscale(100%)'
+      let css =  document.getElementById('wic_css-css')
+      if (css.disabled){
+         css ? css.disabled = false : ''
+
          setCookie('gray',true)
+      }else{
+         css ? css.disabled = true : ''
+         deleteCookie('gray')
       }
 
    }
 }
 
+function AddCssLink(){
+   document.getElementsByTagName("head")[0].insertAdjacentHTML(
+       "beforeend",
+       `<link id="wic-css" rel="stylesheet" href="${wicdata.url}" />`);
+}
+
 window.addEventListener("load", function(event) {
    Wic()
    if (getCookie('gray')){
-      html.style.filter= 'grayscale(100%)'
+      // html.style.filter= 'grayscale(100%)'
    }
 });
 
